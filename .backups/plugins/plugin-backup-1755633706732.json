@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-08-19T20:01:46.732Z",
+  "pluginStates": {},
+  "configurations": {},
+  "executionQueue": [],
+  "criticalData": {
+    "stats": {
+      "totalPlugins": 3,
+      "totalInstances": 0,
+      "totalExecutions": 0,
+      "popularPlugins": [],
+      "recentActivity": [],
+      "healthSummary": {
+        "healthy": 0,
+        "warning": 0,
+        "critical": 0,
+        "unknown": 0
+      }
+    },
+    "healthSummary": [],
+    "timestamp": "2025-08-19T20:01:46.732Z",
+    "version": "1.0.0"
+  }
+}

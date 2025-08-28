@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "dist/public",
+  "builds": [
+    {
+      "src": "api/vercel-handler.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "server/**/*.js",
+        "excludeFiles": "node_modules/**"
+      }
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/vercel-handler.ts"
+    },
+    {
+      "src": "/(admin|dashboard|empire|health|finance|travel|security|saas)/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/vercel-handler.ts": {
+      "maxDuration": 60
+    }
+  }
+}
