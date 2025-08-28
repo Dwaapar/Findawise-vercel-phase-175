@@ -4,23 +4,6 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "outputDirectory": "dist/public",
-  "builds": [
-    {
-      "src": "api/vercel-handler.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": "server/**/*.js",
-        "excludeFiles": "node_modules/**"
-      }
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/public"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/api/(.*)",
